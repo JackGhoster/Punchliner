@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Recent Jokes";
+}
+
+<div class="text-center">
+    <h1 class="display-4">The best jokes of 2007</h1>
+    <p>Hello stranger! You've discovered a page with all the best <a asp-area="" asp-controller="Jokes" asp-action="Index">jokes</a> on the web! Enjoy!</p>
+    <p>You may also <a asp-area="" asp-controller="Jokes" asp-action="ShowSearchForm">search</a> for a joke!</p>
+    <style>
+        .display-4{
+            font-size: 100px;
+        }
+        p{
+            font-size: 25px;
+        }
+        .text-center{
+            
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        a{           
+            color:slategray;
+            text-decoration: none;
+            transition: color 0.7s;
+        }
+        a:hover{   
+            color: darkseagreen;
+        }
+    </style>
+</div>

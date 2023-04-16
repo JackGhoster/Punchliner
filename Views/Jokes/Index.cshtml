@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Punchliner.Models.Joke>
+
+@{
+    ViewData["Title"] = "Jokes";
+}
+
+<h1>Latest Jokes</h1>
+
+<p>
+    <a asp-action="Create">Create a new masterpiece of a joke</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JokeSetup)
+            </th>
+            <th>
+                @Html.DisplayFor(model => User)
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.JokePunchline)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JokeSetup)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Check Punchline</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit the Joke</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete Masterpiece</a>
+            
+
+            </td>
+        </tr>
+}
+    </tbody>
+    <style>
+        td {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        a {
+            color: #225f20;
+            transition: color 0.5s;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: darkseagreen;
+            }
+    </style>
+</table>
